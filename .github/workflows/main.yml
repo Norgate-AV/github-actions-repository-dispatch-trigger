@@ -22,7 +22,7 @@ jobs:
         id: hello
         run: |
           echo "Hello"
-          echo "::set-output name=exit_code::1"
+          echo "::set-output name=exit_code::0"
 
       - name: Repository Dispatch
         if: ${{ (steps.hello.outcome == 'success') && (steps.hello.outputs.exit_code == 0) }}
