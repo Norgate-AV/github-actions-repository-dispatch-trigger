@@ -25,7 +25,6 @@ jobs:
           echo "::set-output name=exit_code::1"
 
       - name: Repository Dispatch
-        needs: [hello]
         if: ${{ (steps.hello.outcome == 'success') && (steps.hello.outputs.exit_code == 0) }}
         uses: peter-evans/repository-dispatch@v3
         with:
